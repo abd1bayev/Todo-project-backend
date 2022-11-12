@@ -8,7 +8,7 @@ from .serializers import TodoSerializer
 
 class TodoListApiView(APIView):
     # add permission to check if user is authenticated
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
     serializer_class = TodoSerializer
 
     # 1. Create
@@ -28,11 +28,12 @@ class TodoListApiView(APIView):
                 status = status.HTTP_400_BAD_REQUEST)
 
     # 2. List all
-    def get(self, request, *args, **kwargs):
+    def get(self, request):
         '''
         List all the todo items for given requested user
         '''
-        todos = Todo.objects.all(user = request.user.id)
+        # todos = Todo.objects.all()
+        todos = Todo.objects.filter(user=request.user.id)
         serializer = TodoSerializer(todos, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -40,7 +41,8 @@ class TodoListApiView(APIView):
 
 class TodoDetailApiView(APIView):
     # add permission to check if user is authenticated
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
+    serializer_class = TodoSerializer
 
     def get_object(self, todo_id, user_id):
         '''

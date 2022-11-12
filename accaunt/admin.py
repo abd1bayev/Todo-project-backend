@@ -7,5 +7,5 @@ from .models import (
 @admin.register(UserProfile)
 class UserAdmin(admin.ModelAdmin):
     """User admin, Accaunt"""
-    list_display = ("email", "name","is_staff", "is_active")
+    list_display = ("id", "email", "name","is_staff", "is_active")
     list_display_links = ("name",)
