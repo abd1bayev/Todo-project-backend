@@ -5,9 +5,3 @@ class TodoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Todo
         fields = ["task", "completed", "timestamp", "updated", "user"]
-
-    def create(self):
-        """Yangi foydalanuvchi yaratish va qaytarish."""
-        todo = Todo.objects.all()
-
-        return todo
