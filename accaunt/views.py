@@ -1,8 +1,10 @@
 from rest_framework import viewsets
+from rest_framework.views import APIView
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.filters import SearchFilter
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 # Bu yerda models dagi modellar
 from .models import (
@@ -11,6 +13,7 @@ from .models import (
 # Bu yerda permissions dagi malumotlar
 from .permissions import (
     UpdateOwnProfile,
+    PostOwnStatus
 )
 # Bu yerda serializers dagi malumotlar
 from .serializers import (
