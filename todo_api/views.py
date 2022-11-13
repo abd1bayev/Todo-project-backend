@@ -80,7 +80,10 @@ class TodoDetailApiView(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
         data = {
-            'task': request.data.get('task'),
+            'text': request.data.get('text'),
+            'image': request.data.get('image'),
+            'description': request.data.get('description'),
+            'price': request.data.get('price'),
             'completed': request.data.get('completed'),
             'user': request.user.id
         }

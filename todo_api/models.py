@@ -4,11 +4,14 @@ from django.conf import settings
 User = settings.AUTH_USER_MODEL
 
 class Todo(models.Model):
-    task = models.CharField(max_length = 180)
+    text = models.CharField(max_length = 180)
+    image = models.ImageField(upload_to='images_todo/')
+    description = models.CharField(max_length = 250)
+    price = models.IntegerField()
     timestamp = models.DateTimeField(auto_now_add = True, auto_now = False, blank = True)
     completed = models.BooleanField(default = False, blank = True)
     updated = models.DateTimeField(auto_now = True, blank = True)
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.task
+        return self.text
