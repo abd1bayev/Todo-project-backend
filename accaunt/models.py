@@ -35,7 +35,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     objects = UserProfileManager()
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['name']
+    # REQUIRED_FIELDS = ['name']
 
     def get_full_name(self):
         """Foydalanuvchilarning to'liq ismini olish uchun foydalaniladi."""

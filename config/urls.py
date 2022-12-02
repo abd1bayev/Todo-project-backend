@@ -25,8 +25,7 @@ schema_view = get_schema_view(
    openapi.Info(
       title="Todo API",
       default_version='v1',
-      description="This is a REST API for a Pizza Delivery service",
-      terms_of_service="https://www.google.com/policies/terms/",
+      description="Todo List",
       contact=openapi.Contact(email="jasurabdibayev0@gmail.com"),
       license=openapi.License(name="Jasur Abdibayev"),
    ),

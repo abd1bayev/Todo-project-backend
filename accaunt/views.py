@@ -25,9 +25,12 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     serializer_class = UserProfileSerializer
     queryset = UserProfile.objects.all()
     authentication_classes = (TokenAuthentication,)
-    permission_classes = (UpdateOwnProfile,)
+    # permission_classes = (UpdateOwnProfile,)
     filter_backends = (SearchFilter,)
-    search_fields = ('name', 'email')
+    search_fields = ('id','name', 'email')
+    
+    
+    
 class LoginViewSet(viewsets.ViewSet):
     """ Elektron pochta va parolni tekshiradi va autentifikatsiya belgisini qaytaradi."""
     serializer_class = AuthTokenSerializer

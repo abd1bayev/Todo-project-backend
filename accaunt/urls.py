@@ -10,7 +10,7 @@ from .views import (
 
 # Tayyor bo'lgan django rest api
 router = DefaultRouter()
-router.register('profile', UserProfileViewSet, basename="profile")
+router.register('sign_up', UserProfileViewSet, basename="profile")
 router.register('login', LoginViewSet, basename="login")
 
 urlpatterns = [
