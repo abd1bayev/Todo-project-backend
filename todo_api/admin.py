@@ -8,6 +8,6 @@ from .models import Todo
 @admin.register(Todo)
 class TodoAdmin(admin.ModelAdmin):
     """Todo admin"""
-    list_display = ("id","text", "image", "description", "price", "timestamp","completed", "updated", "user")
+    list_display = ("id","text", "image", "description", "timestamp","completed", "updated", "user")
     list_display_links = ("text",)
 

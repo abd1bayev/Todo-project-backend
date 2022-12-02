@@ -7,7 +7,6 @@ class Todo(models.Model):
     text = models.CharField(max_length = 180)
     image = models.ImageField(upload_to='images_todo/')
     description = models.CharField(max_length = 250)
-    price = models.IntegerField()
     timestamp = models.DateTimeField(auto_now_add = True, auto_now = False, blank = True)
     completed = models.BooleanField(default = False, blank = True)
     updated = models.DateTimeField(auto_now = True, blank = True)

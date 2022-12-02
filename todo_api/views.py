@@ -84,7 +84,6 @@ class TodoDetailApiView(APIView):
             'text': request.data.get('text'),
             'image': request.data.get('image'),
             'description': request.data.get('description'),
-            'price': request.data.get('price'),
             'completed': request.data.get('completed'),
             'user': request.user.id
         }
